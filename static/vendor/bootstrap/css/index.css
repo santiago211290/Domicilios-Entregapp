@@ -1,0 +1,107 @@
+/*cuerpo del documento*/
+html,body{
+    height: 100%;
+}
+
+/*imagens de del cuerpo del docuemto*/
+img{
+    max-width: 100%;
+}
+
+/*links del menu denavegacion*/ 
+#navegacion a{
+    text-decoration: none;
+    color:white;
+}
+
+/*botones del menu de navegacion*/
+#navegacion button{
+    color:white;
+}
+
+/*menu de navegacion*/
+#navegacion {
+    background:darkslategrey;
+    padding: 30px;
+}
+#navegacion img{
+    max-width: 30%;
+}
+
+/*botones del menu de navegacion*/
+#button{
+    margin:15px;
+}
+
+/*seccion del logo de la vista*/
+#cover{
+    background: url('/static/vendor/img/background9.jpg') center center no-repeat;
+    background-size: cover;
+    color:black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+/*imagenes del logo de la vista de index*/
+#cover img{
+    max-width: 100%;
+}
+
+/*carrusel de imagenes de la vista de index*/
+#carrusel img{
+    height: 10%;
+}
+
+/*seccion de informacion de los servicios de la aplicacion*/
+.contenido-seccion{
+    padding: 2rem 0;
+}
+
+/*imagenes de la seccion de informacion de los servicios de la aplicacion*/
+.contenido-seccion img{
+    height: 300px;
+}
+
+
+/*boton de enviar del formulario de contacto*/
+#button-contact{
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom:10px;   
+}
+
+/*campos del formulario de contacto*/
+ #contactos{
+    margin-top:10px;
+    border:none;
+    border-bottom: 1px solid #00abf0;
+    outline:none;
+    padding:15px;
+    color:#303f9f;
+}
+
+/*campo de mensaje de formulario de contacto*/
+#textarea-contact{
+    border:none;
+    border-bottom: 1px solid #00abf0;
+    outline:none;
+    margin-top:10px;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+/*footer de la vista de index*/
+#footer-main{
+    background: #222;
+    color:white;
+    font-size: 0.8rem;
+    padding:    .5rem 0;
+    margin-top:40px;
+}
+
+/*texto del footer*/
+#footer-main text{
+    padding: 4rem ;
+}

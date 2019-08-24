@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.css">
+     <!--estilos personalizados-->
+     <link rel="stylesheet" href="../static/vendor/bootstrap/css/estiloslogin.css">
+
+	<link rel="stylesheet" type="text/css" href="../static/vendor/bootstrap/css/login.css">
+    <title>login usuarios</title>
+</head>
+<body>
+    <!--mensaje de flash-->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        {{message}}
+        </div></div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% block body %}{% endblock %}
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse " id="navegacion">
+          
+      <div class="container">
+     <a class="navbar-brand fas fa-home" href="/">
+       Menu de inicio
+         </a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+     
+   </div>
+ </nav>
+
+
+    <div class="container-fluid">
+        <div class="row no-gutter">
+          <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+          <div class="col-md-8 col-lg-6">
+            <div class="login d-flex align-items-center py-5">
+              <div class="container">
+   
+                <div class="row">
+                    
+                  <div class="col-md-9 col-lg-8 mx-auto">
+                    <h3 class="login-heading mb-4 text-white" >Iniciar sesión</h3>
+                    <form action="/login/" method="post">
+                      <div class="form-label-group">
+                        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                        <label for="inputEmail" class="fas fa-envelope "> Email</label>
+                      </div>
+      
+                      <div class="form-label-group">
+                        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                        <label for="inputPassword" class="fas fa-lock "> Password</label>
+                      </div>
+      
+                      <div class="form-check">
+                            <label class="form-check-label text-white">
+                              <input type="checkbox" class="form-check-input " name="" id="" value="checkedValue" checked>
+                              Recordar contraseña
+                            </label>
+                          </div>
+                      <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2 fas fa-paper-plane " type="submit"> Iniciar sesion</button>
+                      <div class="text-center">
+                          
+                        <p class="small text-white fas fa-file-alt"> No estoy registrado</p><a class="small text-info" href="/registro/"> Registrarme</a></div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <!--bootstrap js-->
+    <script src="../static/vendor/bootstrap/js/bootstrap.js"></script>
+   <!--libreria de iconos-->
+    <script src="https://kit.fontawesome.com/4e0743667a.js"></script>
+
+</body>
+</html>
+

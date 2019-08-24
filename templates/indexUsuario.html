@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.css">
+     <!--estilos personalizados-->
+
+     <link rel="stylesheet" href="../static/vendor/bootstrap/css/paquetesclientes.css">
+    <title>Paquetes cliente</title>
+</head>
+<body>
+ 
+    <!--mensaje de flsh-->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        {{message}}
+        </div></div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% block body %}{% endblock %}
+    <!--menu de navegacion-->
+    <nav class="navbar navbar-toggleable-md navbar-inverse " id="navegacion">
+        <button class="navbar-toggler navbar-toggler-right " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+                                      
+          <ul class="navbar-nav mr-auto">      
+            <li class="nav-item active">
+            </li>
+          </ul>
+          <div class="dropdown">
+          <button class="btn btn-danger  "  id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <h5 class="fas fa-user"> {{nombres}}</h5>
+          </button>
+    
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item  text-success" type="button"><a href="/logout" class="fas fa-power-off text-success"> Cerrar sesion</a></button>
+               
+                <button class="dropdown-item  text-success" type="button"><a href="/updateEmpleado/<numeroDocumento>" class="fas fa-pencil-alt text-success"> Actualizar informacion</a></button>
+                
+                  <button class="dropdown-item  text-success" type="button"><a href="/borrar" class="fas fa-power-off text-success"> Eliminar cuenta</a></button>
+   
+                  <button class="dropdown-item  text-success" type="button"><a href="#" class="fas fa-power-off text-success"> Mis pedidos</a></button>
+
+                </div>
+        </div>
+        </div>
+      </nav>
+    
+      <div class="container">
+        <div id="carouselExampleControls" class="carousel slide" data-interval="false" >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <!--formulario de recibos-->
+                  <div class="container modal-content modal-dialog" id="seccion-form">
+                        <center><h1>Pago de Recibos</h1></center> 
+                        <form action="/RegistrarRecibo/" method="post" >
+                            <div class="row">               
+                                <div class="col-sm-6">
+                                    <label for="" >Tipo de Recibo</label>
+                                    <input type="text"  name="TipoRecibo"  class="form-control"  placeholder="Tipo de Recibo" required>
+                                </div>
+                                        
+                                <div class="col-sm-6">
+                                    <label for="" >Codigo del Recibo</label>
+                                    <input type="text"  name="CodigoRecibo"  class="form-control"  placeholder="Codigo del Recibo" required>
+                                </div>
+                            </div>
+                
+                            <div class="row">
+                                    <div class="col-sm-12">
+                                        <label for="">Direccion a recoger</label>
+                                        <input type="text" name="direccionrecogerPaquete" class="form-control" placeholder="Direccion a recoger" required>
+                                    </div>
+                                </div>  
+                                
+                                            
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label for="">Telefono</label>
+                                        <input type="text" name="telefonoRecibo" class="form-control" placeholder="Telefono" required="">
+                                    </div>
+                
+                                <div class="col-sm-6">
+                                    <label for="">Horario a recoger</label>
+                                    <input type="text" name="horarioRecogerRecibo" class="form-control" placeholder="Horario a recoger" required>
+                                </div>
+                            </div>
+                
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="" >Fecha Vencimiento Recibo</label>
+                                    <input type="date"  name="fechaVencimiento"  class="form-control"  placeholder="Fecha Vencimiento recibo" required>
+                                </div>
+                
+                                
+                            </div>
+                        
+                            <center><button type="submit" class="btn btn-danger fas fa-file-alt " id="registro-bot"> Registrarse</button></center> 
+                        
+                        </form>                
+                    </div>
+              </div>
+              <div class="carousel-item">
+                <!--formulario de documentos-->
+                
+<div class="container modal-content modal-dialog" id="seccion-form">
+        <center><h1>Envio de paquetes</h1></center> 
+        <form action="/paquetes/" method="POST">
+            <div class="row">
+            <div class="col-sm-12">
+                <label for="">Peso Paquete</label>
+                <input type="text" name="pesoPaquete" class="form-control" placeholder=" Peso paquete" required>
+            </div>
+        </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <label for="">Direccion a recoger</label>
+                    <input type="text" name="direccionRecoger" class="form-control" placeholder="Direccion a recoger" required>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="" class="">Telefono</label>
+                    <input type="text" name="telefono" class="form-control"    placeholder="Telefono de contacto" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <label for="">Direccion de entrega</label>
+                    <input type="text" name="direccionEntrega" class="form-control" placeholder="Direccion de entrega" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <label for="">Descripcion del paquete</label>
+                    <input type="text" name="descripcionPaquete" class="form-control" placeholder="Descripcion del producto" required>
+                </div>
+            </div>
+            <br>
+            <hr>
+           <center><button class="btn btn-danger fas fa-paper-plane" type="submit"> Pedir</button></center> 
+        </form>              
+    </div>
+                </div>
+              <div class="carousel-item">
+                <!--formulario de comidas-->
+
+
+                <div class="container modal-content modal-dialog" id="seccion-form">
+                        <center><h1>Comidas</h1></center> 
+                        <form action="/RegistrarComida/" method="post" >
+                            <div class="row">               
+                                <div class="col-sm-12">
+                                    <label for="" >Restaurante de la Comida</label>
+                                    <input type="text"  name="Restaurante"  class="form-control"  placeholder="Restaurante de la comida" required>
+                                </div>
+                            </div>
+                
+                            <div class="row">               
+                                    <div class="col-sm-12">
+                                        <label for="" >Tipo de Comida</label>
+                                        <input type="text"  name="TipoComida"  class="form-control"  placeholder="Tipo de Comida" required>
+                                    </div>
+                                </div>
+                
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="">Direccion entrega</label>
+                                    <input type="text" name="direccionEntregaComida" class="form-control"  placeholder="Direccion entrega" required>
+                                </div>
+                
+                                <div class="col-sm-6">
+                                    <label for="">Hora de entrega</label>
+                                    <input type="text" name="horarioEntregaComida" class="form-control" placeholder="Hora de entrega" required>
+                                </div>
+                            </div>
+                
+                            <div class="row">
+                                
+                
+                                <div class="col-sm-6">
+                                    <label for="">Telefono</label>
+                                    <input type="text" name="telefonoComida" class="form-control" placeholder="Telefono" required="">
+                                </div>
+                            </div>
+                
+                
+                            <center><button type="submit" class="btn btn-danger fas fa-file-alt " id="registro-bot"> Registrarse</button></center> 
+                        
+                        </form>                
+                    </div>
+            </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+      </div>
+  
+    
+    
+    <!--footer de la vista-->
+    <footer id="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <p class="">Direccion</p>
+                    <p class="">Armenia-Quindio</p>
+                    <p class="">Equipo Entregapp</p>
+                </div>
+
+                <div class="col-sm-3">
+                    <ul class="list-unstyled">
+                        <p class="">Servicio 24 horas</p>
+                        <p class="">Entregapp@gmail.com</p>
+                    </ul>
+                </div>
+            
+                <div class="col-sm-4">
+                    <ul class="list-unstyled">
+                        <h5>Contactenos</h5>
+                        <li class="fab fa-facebook "> <a href=""> facebook</a></li>
+                        <br>
+
+                        <li class="fab fa-twitter-square "> <a href=""> twitter</a></li>
+                        <br>
+
+                        <li class="fab fa-youtube-square "><a href=""> youtube</a></li>
+                        <br>
+
+                        <li class="fab fa-instagram "><a href=""> Instagram</a></li>
+
+                    </ul>
+                </div>
+
+                <div>
+                    
+                </div>
+
+                <div class="col-sm-2">
+                    <h6>Mas informacion</h6>
+                    <p>Entregapp@gmail.com</p>
+                    <p>3166848351</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+</div>
+      
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <!--bootstrap js-->
+    <script src="../static/vendor/bootstrap/js/bootstrap.js"></script>
+    
+    <!--iconos del sitio-->
+    <script src="https://kit.fontawesome.com/4e0743667a.js"></script>
+
+</body>
+</html>

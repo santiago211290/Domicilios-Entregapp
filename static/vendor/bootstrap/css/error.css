@@ -1,0 +1,23 @@
+
+h1{
+    font-family: 'Exo 2', sans-serif;
+}
+#carpeta-error{
+    height:40px;
+    
+}
+#error{
+    padding: 60px;
+    margin-left:250px;
+    margin-bottom: -70px;
+}
+#img-error{
+    
+    margin-left: 300px;
+    margin-top:-70px;
+}
+#menu{
+    margin-left: 500px;
+    margin-top:-10px;
+    
+}

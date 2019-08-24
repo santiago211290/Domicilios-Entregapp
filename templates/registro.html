@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.css">
+     <!--estilos personalizados-->
+
+     <link rel="stylesheet" href="../static/vendor/bootstrap/css/registro.css">
+    <title>Registro usuario</title>
+</head>
+<body>
+
+      <!--mensaje de flash-->
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          {% for message in messages %}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          {{message}}
+          </div></div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+
+      {% block body %}{% endblock %}
+  
+
+        <div class="container-fluid">
+                <div class="row no-gutter">
+                  <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+                  <div class="col-md-8 col-lg-6">
+                    <div class="login d-flex align-items-center py-5">
+                      <div class="container text-white">
+                          <div class="col-md-9 col-lg-8 mx-auto">
+                            <h3 class="login-heading mb-4">Bievenido al registro</h3>
+                          
+                            <form action="/registro/" method="post">
+                              <div class="form-label-group">
+                                <input type="text" name="numeroDocumento" id="inputNumeroDocumento" class="form-control" placeholder="Email address" required autofocus>
+                                <label for="inputNumeroDocumento" class="fas fa-id-card-alt"> Numero Documento</label>
+                              </div>
+                              <div class="row">
+                              <div class="form-label-group col-md-6">
+                                <input type="text" name="nombres" id="inputNombres" class="form-control" placeholder="Password" required>
+                                <label for="inputNombres" class="fas fa-user"> Nombres</label>
+                              </div>
+                              <div class="form-label-group col-md-6">
+                                    <input type="text" name="apellidos" id="inputApellidos" class="form-control" placeholder="Password" required>
+                                    <label for="inputApellidos" class="fas fa-user"> Apellidos</label>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                        <div class="form-label-group col-md-6">
+                                        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Password" required>
+                                        <label for="inputEmail" class="fas fa-envelope"> Email</label>
+                                      </div>
+                                      <div class="form-label-group col-md-6">
+                                            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                            <label for="inputPassword" class="fas fa-lock"> Password</label>
+                                          </div>
+                                </div>
+                                          <div class="row"> 
+                                                <div class="form-label-group col-md-6">
+                                                <input type="text" name="telefono" id="inputTelefono" class="form-control" placeholder="Password" required>
+                                                <label for="inputTelefono" class="fas fa-mobile-alt"> Telefono</label>
+                                              </div>
+                                              <div class="form-label-group col-md-6">
+                                                    <input type="text" name="direccion" id="inputDireccion" class="form-control" placeholder="Password" required>
+                                                    <label for="inputDireccion" class="fas fa-route"> Direccion</label>
+                                                  </div>
+                                                </div>
+
+                                                
+                              
+                              <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2 fas fa-paper-plane" type="submit"> Registrarme</button>
+                              
+                              <div class="text-center"><p class="small text-white fas fa-file-alt"> ya estoy registrado</p><a class="small text-info" href="/login/"> Iniciar sesion</a></div>
+
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+        
+      
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <!--bootstrap js-->
+    <script src="../static/vendor/bootstrap/js/bootstrap.js"></script>
+    
+    <!--iconos del sitio-->
+    <script src="https://kit.fontawesome.com/4e0743667a.js"></script>
+
+</body>
+</html>

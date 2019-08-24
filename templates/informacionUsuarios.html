@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.css">
+    <!--estilos personalizados-->
+    <link rel="stylesheet" href="../static/vendor/bootstrap/css/informacionUsuarios.css">
+
+    <title>Usuarios Administrador</title>
+  </head>
+  <body>
+    
+    <!--mensaje de flash-->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        {{message}}
+        </div></div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% block body %}{% endblock %}
+    
+    <!--menu de navegacion-->
+    <nav class="navbar navbar-toggleable-md navbar-inverse " id="navegacion">
+      <button class="navbar-toggler navbar-toggler-right " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a href="/indexadmin" class="navbar-brand fas fa-envelope-open-text "> Entregapp</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a href="" class="nav-link fas fa-id-card"> Contacto</a>
+          </li>
+
+          <li class="nav-item active">
+            <a href="" class="nav-link fas fa-question-circle"> Ayuda</a>
+          </li>
+          
+        </ul>
+        <a href=""></a><h4 class="fas fa-user" id="usuario"> {{nombres}}</h4></a>
+        <button class="btn btn-outline-success my-2 my-sm-0 fas fa-power-off" id="logout"><a href="/logout" class="text-light"> Cerrar Sesión</a> </button>
+                         
+      </div>
+  </nav>
+
+  <!--seccion del logo de la aplicacion-->
+  <section id="cover">
+    <div id="cover-texto">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-1">
+            <img src="../static/vendor/img/logoentregapp.jpg" alt="">
+          </div>
+
+          <div class="col-sm-11">
+              <h1 class="display-3">Domicilios Entregapp</h1>
+              <h6>Disfruta de tu tiempo mientras Entregapp se encarga de tus envios</h6>
+          </div>
+                              
+      </div>
+    </div>        
+  </section>
+
+ 
+    <!--seccion donde esta la tabla de los empleados registrados-->   
+    
+    <table class="table table-hover table-dark" id="tabla">
+        <thead>
+          <th class="text-center">Numero Documento</th>
+          <th  class="text-center">Nombres</th>                              
+          <th  class="text-center">Apellidos</th>
+          <th  class="text-center">Email</th>
+          <th  class="text-center">Direccion</th>
+          <th  class="text-center">Telefono</th>
+          <th  class="text-center">Role</th>
+
+          <th class="text-center"></th>
+        </thead>
+    
+          {%for usuario in usuarios%}
+            <tr></tr>
+              <td class="text-center"> {{usuario.0}}</td>
+              <td  class="text-center"> {{usuario.1}}</td>
+              <td  class="text-center"> {{usuario.2}}</td>
+              <td  class="text-center"> {{usuario.3}}</td>
+              <td class="text-center"> {{usuario.5}}</td>
+              <td  class="text-center"> {{usuario.6}}</td>
+              <td  class="text-center"> {{usuario.7}}</td>
+              <td  class="text-center">
+                <form action="/eliminar/{{usuario[0]}}" method="GET">
+                  <button name="" type="submit" value='' class="btn btn-danger">Eliminar</button>
+                </form>
+              </td>
+
+              
+          <tr>
+                            
+          {%endfor%}
+                          
+      </table>        
+  <!--footer de la vista-->
+  <footer id="footer-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <p class="">Direccion</p>
+          <p class="">Armenia-Quindio</p>
+          <p class="">Equipo Entregapp</p>   
+        </div>
+
+      <div class="col-sm-3">
+        <ul class="list-unstyled">
+          <p class="">Servicio 24 horas</p>
+          <p class="">Entregapp@gmail.com</p>
+        </ul>
+      </div>
+                
+      <div class="col-sm-4">
+        <ul class="list-unstyled">
+          <h5>Contactenos</h5>
+          <li class="fab fa-facebook "> <a href=""> facebook</a></li>
+          <br>
+
+          <li class="fab fa-twitter-square "> <a href=""> twitter</a></li>
+          <br>
+
+          <li class="fab fa-youtube-square "><a href=""> youtube</a></li>
+          <br>
+
+          <li class="fab fa-instagram "><a href=""> Instagram</a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-2">
+        <h6>Mas informacion</h6>
+        <p>Entregapp@gmail.com</p>
+        <p>3166848351</p>
+      </div>
+
+      </div>
+    </div>
+  </footer>
+         
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <!--bootstrap js-->
+    <script src="../static/vendor/bootstrap/js/bootstrap.js"></script>
+     <!--iconos del sitio-->
+     <script src="https://kit.fontawesome.com/4e0743667a.js"></script>
+
+  </body>
+</html>
+
+
+  

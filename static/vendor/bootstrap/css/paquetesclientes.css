@@ -1,0 +1,87 @@
+/*cuerpo del documento*/
+body{
+    background: url('/static/vendor/img/background10.jpg') no-repeat center center fixed;
+    background-size: cover;    
+}
+
+
+/*botones del menu de navegacion*/
+#navegacion button{
+    color:white;
+}
+
+/*menu de navegacion*/
+#navegacion {
+    background:darkred;
+    padding: 30px;
+}
+
+/*links del menu de navegacion*/ 
+#navegacion a{
+    text-decoration: none;
+    color:white; 
+}
+
+/*botones despegables del menu de navegacion*/
+#dropdownMenu{
+    margin:10px;
+}
+
+/*nombre del usuario en sesion*/
+#usuario{
+    margin:10px;
+    color:white;
+}
+
+/*boton de cerrar sesion*/
+#logout{
+    margin:100px;
+    height:40px;
+}
+
+/*seccion del formulario*/
+#seccion-form{
+    margin-top: 80px;
+    background-color: #3b4652;
+    opacity: .85;
+    padding: 20px 20px;
+    box-shadow: 0 0 3px #848484;
+    color:white;
+}
+
+/*boton de registrase en el formulario de registro*/
+#registro-bot{
+    margin-top: 25px;
+}
+
+/*enlace de registrado ya en el formulario de registro*/
+#registrado-ya{
+    margin:20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    margin-left: 160px;
+    color:white;
+}
+
+/*enlace de registrado ya en el formulario de registro*/
+#registrado-ya a{
+    text-decoration: none;
+}
+
+/*footer de la vista*/
+#footer-main{
+    background: #222;
+    color:white;
+    font-size: 0.8rem;
+    padding:    .5rem 0;
+}
+
+/*texto del footer*/
+#footer-main text{
+    padding: 4rem ;
+}
+
+.credit-card-div  span { padding-top:10px; }
+.credit-card-div img { padding-top:30px; }
+.credit-card-div .small-font { font-size:9px; }
+.credit-card-div .pad-adjust { padding-top:10px; }

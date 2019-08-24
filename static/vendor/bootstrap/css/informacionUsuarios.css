@@ -1,0 +1,80 @@
+/*cuerpo del documento*/
+html,body{
+    height: 100%;
+}
+
+/*imagenes del cuerpo del documento*/
+img{
+    max-width: 100%;
+}
+
+/*links del menu de navegacion*/ 
+#navegacion a{
+    text-decoration: none;
+    color:white;  
+}
+
+/*boton del menu de navegacion*/
+#navegacion button{
+    color:white;
+}
+
+/*menu de navegacion*/
+#navegacion {
+    background:darkred;
+padding:30px; 
+}
+
+/*nombre de usuario en sesion*/
+#usuario{
+    color:white;
+}
+
+/*boton de cerrar sesion*/
+#logout{
+    margin:100px;
+}
+
+/*seccion del logo de la aplicacion*/
+#cover{
+    background: url('/static/vendor/img/background9.jpg') center center no-repeat;
+    background-size: cover;
+    color:black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 10px;    
+}
+
+/*imagen de la seccion del logo de la aplicacion*/
+#cover img{
+    max-width: 300%;
+}
+
+/*titulo de la tabla de empleados registrados en la aplicacion*/
+#tittle h4{
+    color:black;
+    background:lightsalmon;
+    margin:none;
+    margin-top:25px;
+    padding: 20px;
+}
+
+/*tabla de los empleados registrados en la aplicacion*/
+#tabla{
+    background:lightgrey;
+}
+
+/*footer de la vista*/
+#footer-main{
+    background: #222;
+    color:white;
+    font-size: 0.8rem;
+    padding:    .5rem 0;
+    margin-top:40px;
+}
+
+/*texto del footer*/
+#footer-main text{
+    padding: 4rem ;
+}

@@ -1,0 +1,101 @@
+/*cuerpo del documento*/
+html,body{
+    height: 100%;
+}
+
+/*imagenes del cuerpo del documento*/
+img{
+    max-width: 100%;
+}
+
+/*botones del menu de navegacion*/
+#navegacion button{
+    color:white;
+}
+
+/*menu de navegacion*/
+#navegacion {
+    background:darkred;
+    padding: 30px;
+}
+
+/*links del menu de navegacion*/ 
+#navegacion a{
+    text-decoration: none;
+    color:white; 
+}
+
+/*botones despegables del menu de navegacion*/
+#dropdownMenu{
+    margin:10px;
+}
+
+/*nombre del usuario en sesion*/
+#usuario{
+    margin:10px;
+    color:white;
+}
+
+/*boton de cerrar sesion*/
+#logout{
+    margin:100px;
+    height:40px;
+}
+
+/*imagen de la seccion del logo de la vista*/
+#cover img{
+    max-width: 300%;
+}
+
+/*seccion del logo de la vista*/
+#cover{
+    background: url('/static/vendor/img/background9.jpg') center center no-repeat;
+    background-size: cover;
+    color:black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+/*carrusel de imagenes de la vista*/
+#carrusel img{
+    height: 10%;
+}
+
+/*seccion de informacion de los servicios de la aplicacion*/
+.contenido-seccion{
+    padding: 2rem 0;
+}
+
+/*imagenes de l aseccion de informcion de los servicios de la aplicacion*/
+.contenido-seccion img{
+    height: 300px;
+}
+
+/*seccion de informacion de quienes somos de la aplicacion*/
+#Acerca-de{
+    background:url('/static/vendor/img/background9.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+/*texto de la seccion de informacion de quienes somos de la aplicacion*/
+.texto-acerca-de{
+    background: rgba(0, 0, 0, 0.8);
+    color:white;
+    padding: .875rem;
+}
+
+/*footer de la vistad del administrador*/
+#footer-main{
+    background: #222;
+    color:white;
+    font-size: 0.8rem;
+    padding:    .5rem 0;
+    margin-top:40px;
+}
+
+/*texto del footer de la vista*/
+#footer-main text{
+    padding: 4rem ;
+}

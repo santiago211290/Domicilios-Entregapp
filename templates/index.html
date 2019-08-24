@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.css">
+    <!--estilos personalizados-->
+
+    <link rel="stylesheet" href="../static/vendor/bootstrap/css/index.css">
+
+    <title>Index</title>
+  </head>
+  <body>
+    
+    <!--mensaje de flash-->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        {{message}}
+        </div></div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% block body %}{% endblock %}
+    
+    <!--menu de navegacion-->
+    <nav class="navbar navbar-toggleable-md navbar-inverse " id="navegacion">
+          
+               <div class="container">
+              <a class="navbar-brand" href="#">
+                    <img src="/static/vendor/img/logoentregapp.jpg" alt="">
+                  </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+              <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                          <span class="sr-only">(current)</span>
+                        </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login/">Iniciar sesion</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          
+    <!--carrusel-->
+    <section id="carrusel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../static/vendor/img/domicilio1.jpg" width="200" height="200"  class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <h3 class="text-light">Envio de paquetes</h3>
+                        <p>Los paquetes en la puerta de tu casa</p>
+                    </div>
+                </div>
+
+              <div class="carousel-item">
+                <img src="../static/vendor/img/domicilio2.jpg" width="300" height="300"  class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <h3>Envio de documentos</h3>
+                        <p>Los documentos en la puerta de su casa</p>
+                    </div>
+              </div>
+
+              <div class="carousel-item">
+                <img src="../static/vendor/img/domicilio3.jpg" width="300" height="300"  class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <h3>Envio de informacion</h3>
+                        <p>Los mensajes en la puerta de su casa</p>
+                    </div>
+              </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Anterior</span>
+            </a>
+
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Siguiente</span>
+            </a>
+
+        </div>
+    </section>
+
+    <!--seccion de informacion de los servicios de la aplicacion-->
+    <section id="empresa">
+        <div class="contenido-seccion">
+            <div class="container">   
+                <h2>Nuestros servicios</h2>
+                <p class="lead">
+                    Si está muy ocupado o sencillamente tiene pereza de salir porque estas descansando en casa
+                    o por el mal clima, puedes aprovechar  las posibilidades que te brinda Entregapp, la aplicacion 
+                    de domilios y encomiendas con un solo click los productos estaran en la direccion que desees con
+                    la mayor privacidad y seguridad brindada por nuestro grupo de trabajo
+                </p>    
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card-group" >
+                            <div class="card" >
+                                <img src="../static/vendor/img/envioDocumentos.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">       
+                                        <center><h3 class="card-title">Envio de documentos</h3></center>                                   
+                                    </div>
+
+                                    <div class="class-body">
+                                        <p class="lead">
+                                            En Entregapp tendras la posibilidad de enviar los tipos de
+                                            documentos que necesites a cualquier lugar de la ciudad nosotros
+                                            nos encargaremos de llevarlos hasta su destino
+                                        </p>
+                                    </div>
+                            </div>
+                                                                              
+                            <div class="card">
+                                <img src="../static/vendor/img/comidas.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <center><h3 class="card-title">Entrega de comidas</h3></center> 
+                                    </div>
+
+                                    <div class="class-body">
+                                        <p class="lead">
+                                            Elige desde la comodidad de tu casa la deliciosa comida 
+                                            que deseas y no te preocupes por las largas filas por que Entregapp se encargara 
+                                            de llevarla hasta la puerta de tu casa
+                                        </p>
+                                    </div>
+                            </div>
+
+                                <div class="card">
+                                    <img src="../static/vendor/img/paquetes.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body text-center">
+                                            <center><h3 class="card-title">Entrega de paquetes</h3></center>
+                                        </div>
+
+                                        <div class="class-body">
+                                            <p class="lead">
+                                                envio de mercancía y paquetes a cualquier lugar 
+                                                de la ciudad con excelentes tiempos de entrega, aplicaran condiciones y 
+                                                limites de acuerdo al peso y volumen de los paquetes
+                                            </p>
+                                        </div>
+                                </div>
+                                        
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </section>
+         
+    
+<!--seccion de formulario de contacto-->
+<section id="formulario-contacto">
+    <div class="container">
+        <form action="/contacto" method="POST" >
+            <h2>Contactenos</h2>
+            <p>
+                Agradecemos el interes de contactarse con nosotros, si desea mas informacion sobre algunos de 
+                nuestros servicios por favor llene el siguiente formulario y en seguida estaremos respondiendo
+            </p>
+                
+            <hr>
+                
+            <div class="row form-group">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
+                    <div>
+                        <h2>Formulario de contacto</h2>      
+                    </div>
+
+                    <div>
+                        <input type="text" name="nombre" id="contactos" class="form-control" placeholder="ingrese su nombre" required>
+                    </div>
+
+                    <div>
+                        <input type="email" name="correo" id="contactos" class="form-control" placeholder="Ingrese su correo" required>
+                    </div>
+                   
+                    <div>
+                        <input type="text" name="telefono" id="contactos" class="form-control"  placeholder="Ingrese su telefono" required>
+                    </div>
+
+                    <div>
+                        <textarea name="mensaje" id="textarea-contact" class="form-control" row ="40" col="50" placeholder="Escriba su mensaje"></textarea>
+                    </div>
+
+                    <div>
+                        <button class="btn btn-success " id="button-contact" type="submit">Enviar</button>
+                    </div>
+                </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" >
+                        <br>
+                        <p>
+                            <strong>
+                                Si tienes alguna duda acerca de nuestros servicios, dejenos su mensaje a traves de 
+                                este formulario y nosotros nos comunicaremos con usted 
+                            </strong>
+                        </p>
+
+                        <p>
+                            Entregapp es una plataforma dedicada al envio de domicilios y encomiendas de agilizando la vida diaria de los usuarios
+                            que hacen parte de nuestra aplicacion
+                        </p>
+
+                            <img src="../static/vendor/img/contacto.jpg" class="img-thumbnail" alt="">
+                        
+                    </div>
+
+            </div>
+        </form>
+    </div>
+</section>      
+
+
+    <!--footer del index-->
+    <footer id="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5">
+                    <h5>Direccion</h5>
+                    <p class="">Armenia-Quindio</p>
+                    <p class="">Equipo Entregapp</p>
+                </div>
+                                        
+                <div class="col-sm-5">
+                    <ul class="list-unstyled">
+                        <h5>Mas informacion</h5>
+                        <li class="fab fa-facebook " ><a href="" id="redes"> facebook</a></li>
+                        <br>
+
+                        <li class="fab fa-twitter-square "><a href=""  id="redes"> twitter</a></li>
+                        <br>
+
+                        <li class="fab fa-youtube-square " ><a href="" id="redes"> youtube</a></li>
+                        <br>
+
+                        <li class="fab fa-instagram "><a href="" id="redes"> Instagram</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-2">
+                    <h5>Contactenos</h5>
+                    <p>Entregapp@gmail.com</p>
+                    <p>3166848351</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+            
+               
+             
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <!--bootstrap js-->
+    <script src="../static/vendor/bootstrap/js/bootstrap.js"></script>
+    
+    <!--iconos del sitio-->
+    <script src="https://kit.fontawesome.com/4e0743667a.js"></script>
+
+  </body>
+</html>
